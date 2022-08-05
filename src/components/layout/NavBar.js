@@ -1,7 +1,7 @@
 import styles from '../../styles/NavBar.module.css'
-import { Link } from 'react-router-dom'
-import Container from './Container'
 import logo from '../../assets/costs_logo.png'
+import {Link} from 'react-router-dom'
+
 
 export default function NavBar() {
     return (
@@ -16,12 +16,13 @@ export default function NavBar() {
 
                 <ul className={styles.list}>
                     <li className={styles.item}><Link to='/'>Home</Link></li>
-                    <li className={styles.item}><Link to='/projects'>Projects</Link></li>
-                    <li className={styles.item}><Link to='/company'>Company</Link></li>
-                    <li className={styles.item}><Link to='/newproject'>NewProject</Link></li>
-                    <li className={styles.item}><Link to='/contact'>Contact</Link></li>
+                    <li className={styles.item}><Link to='/projects'>Projetos</Link></li>
+                    <li className={styles.item}><Link to='/newproject'>Novos Projetos</Link></li>
+                    <li className={styles.item}><Link to='/company'>Empresa</Link></li>
+                    <li className={styles.item}><Link to='/contact'>Contatos</Link></li>
                 </ul>
             </div>
+            
         </nav>
     )
 }
