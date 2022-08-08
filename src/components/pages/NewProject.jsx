@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom'
 import styles from '../../styles/NewProject.module.css'
-import ProjectForm from '../projects/projectForm'
+import ProjectForm from '../projects/ProjectForm'
 
 
 export default function NewProject() {
 
     const navigate = useNavigate()
-    
+
     function createPost(project) {
-        
+
         project.cost = 0
         project.service = []
 
@@ -19,15 +19,15 @@ export default function NewProject() {
             },
             body: JSON.stringify(project)
         })
-        .then((resp) => resp.json())
-        .then((data) => {
-            console.log(data)
-            navigate('/projects', {
-                message: 'Projeto criado com sucesso!'
+            .then((resp) => resp.json())
+            .then((data) => {
+                console.log(data)
+                navigate('/projects', { 
+                    state: { message: 'Projeto criado com sucesso!' } 
+                })
+
             })
-            
-        })
-        .catch((err) => console.log(err))
+            .catch((err) => console.log(err))
 
     }
 
@@ -35,9 +35,9 @@ export default function NewProject() {
         <div className={styles.newproject_container}>
             <h1>Criar Projeto</h1>
             <p>Crie seu projeto para depois adicionar os serviços</p>
-            <ProjectForm 
-            btnText='Criar Projeto'
-            handleSubmit={createPost}
+            <ProjectForm
+                btnText='Criar Projeto'
+                handleSubmit={createPost}
             />
         </div>
     )
