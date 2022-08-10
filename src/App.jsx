@@ -9,6 +9,7 @@ import NewProject from './components/pages/NewProject';
 import Contact from './components/pages/Contact';
 
 import styles from './styles/App.module.css';
+import Project from './components/pages/Project';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/projects' element={<Projects />} />
           <Route path='/newproject' element={<NewProject />} />
+          <Route path='/project/:id' element={<Project />} />
           <Route path='/company' element={<Company />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>
